@@ -16,10 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.views.generic.base import RedirectView
 from StoreApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('products/', views.product_list, name='product_list'),
     path('products/<int:id>/', views.product_details, name='product_details'),
+    path("", RedirectView.as_view(url="products/", permanent=True)),
 ]
