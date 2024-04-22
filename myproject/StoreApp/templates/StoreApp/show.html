@@ -1,13 +1,15 @@
 {% extends 'StoreApp/base.html' %}
+{% load static %}
 
 {% block title %}Store - Show Page{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'show.css' %}">
 <main>
     <h1>Name: {{ product.name }}</h1>
 
     <div id="product_info">
-        <p>Price: {{ product.price }}</p>
+        <p>Price: ${{ product.price }}</p>
         <p>Description: {{ product.description }}</p>
 
         <a href="/">Go Back</a>
